@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Special+Elite&family=UnifrakturCook:wght@700&display=swap');
+
+:root{--bg:#080609;--panel:#110d12;--red:#a20f20;--red2:#e02a35;--text:#e9e2e4;--muted:#a39aa1;--line:#38242d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Special Elite',monospace;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+.topbar{height:auto;min-height:70px;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:#080609;border-bottom:1px solid #251820;position:sticky;top:0;z-index:20}
+.logo{font-family:'Creepster',cursive;letter-spacing:2px;font-size:1.25rem;color:#eee}
+nav{display:flex;gap:24px;font-size:.75rem;text-transform:uppercase;color:#c9bec5}
+nav a:hover,footer a:hover{color:#ff3545}
+.sound-btn{background:transparent;border:1px solid #61404b;color:#e8dce0;padding:10px 13px;font-size:.72rem}
+.hero{position:relative;min-height:690px;height:calc(100vh - 70px);max-height:900px;display:flex;align-items:center;padding:8% 10%;overflow:hidden;background:#0c080d}
+.hero-image{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(6,4,8,.96),rgba(8,4,9,.58),rgba(8,4,9,.22)),url('images/portada.jpg');background-position:center;background-size:cover;filter:grayscale(.55) contrast(1.15);animation:drift 25s ease-in-out infinite alternate}
+.hero-shade{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 45%,transparent 0%,rgba(5,3,6,.25) 38%,#080609 100%),linear-gradient(0deg,#080609 0%,transparent 25%,transparent 80%,#080609 100%)}
+.hero-content{position:relative;z-index:2;max-width:750px}
+.eyebrow,.section-kicker,.card-tag{color:#d33140;letter-spacing:3px;font-size:.72rem}
+h1{font-family:'Creepster',cursive;font-size:clamp(4.3rem,10vw,9.5rem);line-height:.78;letter-spacing:2px;margin:30px 0;text-shadow:5px 5px 0 #420811,0 0 35px #7d0d1c}
+h1 span{color:#c71d2d}
+.hero-copy{max-width:480px;line-height:1.8;color:#d0c5cc;font-size:1rem}
+.blood-button{display:inline-flex;gap:28px;align-items:center;margin-top:25px;padding:16px 22px;background:#9d1424;color:#fff;border:1px solid #d33a48;text-transform:uppercase;font-size:.78rem;box-shadow:0 0 30px #4b0815;transition:.25s}
+.blood-button:hover{background:#d21b2e;transform:translateY(-3px)}
+.tiny-warning{font-size:.65rem;color:#92848e;margin-top:28px}
+.hero-stamp{position:absolute;right:9%;top:28%;border:2px solid #9b2432;color:#b52939;padding:18px 12px;transform:rotate(9deg);font-size:1.1rem;text-align:center;line-height:1.3;opacity:.7}
+.scroll-cue{position:absolute;bottom:35px;left:10%;font-size:.65rem;letter-spacing:3px;color:#8d7c87}
+.section-wrap{width:min(1120px,88%);margin:0 auto}
+.intro{padding:100px 0 70px;text-align:center}
+h2{font-family:'Creepster',cursive;font-size:clamp(2.8rem,6vw,5rem);font-weight:400;line-height:1;margin:15px 0 25px}
+h2 em{font-style:normal;color:#bd1d2d}
+.intro-text{max-width:670px;margin:0 auto;color:#b6aab3;line-height:1.9}
+.warning-line{margin:36px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px;color:#c1b4bd;font-size:.78rem;max-width:760px}
+.warning-symbol{color:#d52b3b;margin-right:12px}
+.content-section{padding:75px 0 100px}
+.section-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px;gap:20px}
+.section-heading h2{margin-bottom:0}.section-number{color:#756570;font-size:.7rem;letter-spacing:2px;padding-bottom:8px}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fear-card{background:linear-gradient(145deg,#171018,#0d0a0f);border:1px solid #30202a;transition:transform .3s,border-color .3s}
+.fear-card:hover{transform:translateY(-7px);border-color:#8c2332}
+.card-image{height:245px;background-size:cover;background-position:center;display:grid;place-items:center;position:relative;overflow:hidden;background-color:#1a1119}
+.card-image::after,.gallery-slot::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,4,8,.8),transparent 75%)}
+.card-image span,.gallery-slot span{position:relative;z-index:1;color:#76636f;font-size:.7rem;letter-spacing:3px}
+.image-ghost{background-image:linear-gradient(0deg,#10091199,#10091199),url('images/fantasma.jpg')}
+.image-doll{background-image:linear-gradient(0deg,#10091199,#10091199),url('images/muneca.jpg')}
+.image-shadow{background-image:linear-gradient(0deg,#10091199,#10091199),url('images/sombra.jpg')}
+.card-body{padding:24px}.card-tag{font-size:.62rem;letter-spacing:2px}
+h3{font-family:'Creepster',cursive;font-weight:400;font-size:1.8rem;margin:12px 0}
+.card-body p:not(.card-tag){color:#b6aab3;font-size:.82rem;line-height:1.8}
+.tip{border-top:1px solid #34232d;padding-top:13px;color:#d34a56!important;font-size:.72rem!important}
+.movie-section{background:linear-gradient(180deg,#0c080d,#120b12 50%,#080609);border-top:1px solid #261720;border-bottom:1px solid #261720}
+.movie-list{border-top:1px solid var(--line)}
+.movie-row{display:grid;grid-template-columns:45px 135px 1fr 25px;gap:25px;align-items:center;padding:25px 0;border-bottom:1px solid var(--line)}
+.movie-number{font-family:'Creepster',cursive;font-size:1.7rem;color:#7b2936}
+.movie-poster{height:155px;background-color:#20131d;background-size:cover;background-position:center;display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid #49303a}
+.movie-poster::after{content:"";position:absolute;inset:0;background:linear-gradient(140deg,#190b16aa,#8a142355)}
+.movie-poster span{position:relative;z-index:1;text-align:center;font-size:.6rem;letter-spacing:2px;color:#b7a4b0}
+.poster-one{background-image:url('images/pelicula1.jpg')}.poster-two{background-image:url('images/pelicula2.jpg')}.poster-three{background-image:url('images/pelicula3.jpg')}
+.movie-info h3{font-size:2rem;margin:6px 0}
+.movie-info p:not(.card-tag){color:#b6aab3;font-size:.85rem;line-height:1.7}
+.mood{color:#d34a56;font-size:.72rem}.movie-mark{color:#8b2434}
+.small-note{font-size:.7rem;color:#7f727c;margin-top:25px}
+.gallery-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;grid-template-rows:190px 190px;gap:14px;margin-top:35px}
+.gallery-slot{position:relative;display:grid;place-items:center;overflow:hidden;border:1px solid #39232d;background:#1a1019;background-size:cover;background-position:center}
+.gallery-slot::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#21131f,#0c080d);opacity:.8}
+.gallery-slot.tall{grid-row:span 2;background-image:url('images/galeria1.jpg')}
+.gallery-slot:nth-child(2){background-image:url('images/galeria2.jpg')}
+.gallery-slot:nth-child(3){background-image:url('images/galeria3.jpg')}
+.gallery-slot.wide{grid-column:span 2;background-image:url('images/galeria4.jpg')}
+.final-choice{min-height:650px;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;border-top:1px solid #4a1d2b;background:#10070d}
+.final-backdrop{position:absolute;inset:0;background:radial-gradient(ellipse at center,#4b0a19 0%,#1a0712 40%,#070508 78%),url('images/final.jpg') center/cover;opacity:.75;filter:grayscale(.4)}
+.final-backdrop::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080609,transparent 25%,transparent 75%,#080609)}
+.final-content{position:relative;z-index:2;padding:90px 20px}
+.final-content h2{font-size:clamp(4rem,10vw,8rem);text-shadow:0 0 30px #8b1429;margin:25px 0}
+.final-content>p:not(.section-kicker){color:#c6b6c0;line-height:1.8}
+.choice-buttons{display:flex;justify-content:center;gap:16px;margin-top:35px}
+.choice-button{padding:17px 30px;min-width:150px;letter-spacing:2px;border:1px solid #8a6b78;background:#120b12;color:#eee;transition:.2s}
+.choice-button:hover{transform:scale(1.06);box-shadow:0 0 25px #8d1427}
+.choice-button.trick{background:#941426;border-color:#df3347}
+.choice-hint{min-height:25px;font-size:.8rem!important;color:#e04a57!important}
+footer{display:flex;justify-content:space-between;gap:20px;padding:25px 6%;font-size:.62rem;letter-spacing:1px;color:#82727d;border-top:1px solid #261720}
+footer span:first-child{font-family:'Creepster',cursive;color:#d2c5cc;font-size:1rem}
+.screamer{display:none;position:fixed;inset:0;z-index:100;background:#020102;align-items:center;justify-content:center;flex-direction:column;overflow:hidden}
+.screamer.active{display:flex;animation:flash .14s steps(2) infinite}
+.screamer-face{width:min(60vw,430px);height:min(70vw,460px);position:relative;background:radial-gradient(ellipse at 50% 40%,#e6d8d0 0%,#a59a9c 28%,#383039 57%,#050405 72%);border-radius:48% 48% 35% 35%;filter:contrast(1.5);box-shadow:0 0 90px #b90024}
+.eyes{position:absolute;top:32%;left:15%;right:15%;display:flex;justify-content:space-between}
+.eyes i{display:block;width:27%;height:45px;background:#050305;border-radius:50%;box-shadow:0 0 22px #000}
+.nose{position:absolute;top:48%;left:44%;width:12%;height:18%;background:#211920;clip-path:polygon(50% 0,0 100%,100% 100%)}
+.mouth{position:absolute;left:25%;right:25%;top:66%;height:22%;border-radius:8% 8% 50% 50%;background:#090407;border:5px solid #2b1720;overflow:hidden}
+.mouth span{position:absolute;inset:0;background:repeating-linear-gradient(90deg,#e2d7d4 0 8px,#2a171e 8px 12px);height:18px}
+.screamer>p{font-family:'Creepster',cursive;color:#ff1c35;font-size:clamp(2rem,6vw,4rem);letter-spacing:4px;text-shadow:0 0 20px red}
+.screamer button{background:transparent;color:#b7a9b1;border:1px solid #68404b;padding:12px 18px;font-size:.7rem}
+@keyframes flash{0%{background:#030103}50%{background:#25000a}100%{background:#030103}}
+@keyframes drift{from{transform:scale(1)}to{transform:scale(1.08)}}
+@media(max-width:800px){.topbar{flex-wrap:wrap;justify-content:center}.logo{width:100%;text-align:center}nav{order:3;flex-wrap:wrap;justify-content:center;gap:14px}.hero{min-height:650px;padding:12% 7%}.hero-stamp{right:7%;top:10%;font-size:.8rem}.card-grid{grid-template-columns:1fr}.card-image{height:280px}.movie-row{grid-template-columns:28px 100px 1fr;gap:14px}.movie-poster{height:130px}.movie-mark{display:none}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px 180px}.gallery-slot.tall{grid-row:span 2}.gallery-slot.wide{grid-column:span 1}footer{flex-direction:column;text-align:center}.section-heading{align-items:start}.section-number{white-space:nowrap}}
+@media(max-width:480px){.hero h1{font-size:4.1rem}.hero-stamp{display:none}.movie-row{grid-template-columns:24px 82px 1fr;gap:10px}.movie-poster{height:115px}.movie-info h3{font-size:1.45rem}.movie-info p:not(.card-tag){font-size:.75rem}.mood{font-size:.65rem}.choice-buttons{flex-direction:column;align-items:center}.choice-button{width:220px}.gallery-grid{grid-template-rows:150px 150px 150px}}
+/* ===== ANIMACIÓN MÁGICA DE DULCE ===== */
+
+.dulce-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow: hidden;
+    pointer-events: none;
+    background: radial-gradient(
+        circle,
+        rgba(255, 111, 0, 0.28),
+        rgba(20, 0, 30, 0.78)
+    );
+    animation: dulceAparece 0.5s ease-out;
+}
+
+.dulce-mensaje {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%) scale(0.4);
+    text-align: center;
+    color: #ffb52e;
+    font-size: clamp(2rem, 7vw, 5rem);
+    font-weight: 900;
+    text-shadow: 0 0 15px #ff6500, 0 0 35px #a000ff;
+    animation: dulceTexto 0.8s ease-out forwards;
+}
+
+.dulce-mensaje small {
+    display: block;
+    margin-top: 15px;
+    color: white;
+    font-size: clamp(1rem, 3vw, 1.6rem);
+}
+
+.dulce-caramelo {
+    position: absolute;
+    top: -80px;
+    font-size: 2.5rem;
+    animation: dulceCaida linear forwards;
+}
+
+@keyframes dulceAparece {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes dulceTexto {
+    0% {
+        transform: translate(-50%, -50%) scale(0.3) rotate(-8deg);
+        opacity: 0;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.15) rotate(3deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes dulceCaida {
+    from {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    to {
+        transform: translateY(120vh) rotate(720deg);
+    }
+}
+
+/* ===== GALERÍA DE VIDEOS PARANORMALES ===== */
+
+.galeria-paranormal {
+    padding: 70px 6%;
+    background:
+        radial-gradient(ellipse at top, #251019 0%, #080808 65%);
+}
+
+.intro-galeria {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    text-align: center;
+    color: #c9baba;
+    line-height: 1.8;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.video-card {
+    background: #100d10;
+    border: 1px solid #612323;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(160, 0, 0, 0.13);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(210, 0, 0, 0.35);
+}
+
+.video-marco {
+    width: 100%;
+    background: #000;
+    aspect-ratio: 16 / 9;
+}
+
+.video-marco video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.video-card h3 {
+    color: #ff4545;
+    padding: 18px 18px 5px;
+    margin: 0;
+    font-size: 1.2rem;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
+}
+
+.video-card p {
+    color: #c9c0c0;
+    padding: 0 18px 20px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-paranormal {
+        padding: 45px 5%;
+    }
+}
+/* Botón de sonido ambiental */
+.boton-sonido {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    padding: 13px 18px;
+    color: #ff4040;
+    background: #080808;
+    border: 1px solid #8b0000;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(180, 0, 0, 0.35);
+    transition: 0.3s;
+}
+
+.boton-sonido:hover {
+    background: #300000;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+    transform: scale(1.04);
+}
